@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:plot_frontend/home/invest.dart';
+import 'package:plot_frontend/home/Hometop.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -32,10 +32,11 @@ class _HomeState extends State<Home> {
             borderRadius: BorderRadius.all(Radius.circular(50))
         ),),
                 SizedBox(width: 15,),
-                Text("Adamsy",style: TextStyle(fontSize: 20),)
+                Text("Plot.",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)
                 ],
               ),
-              Invest(),
+              SizedBox(height: MediaQuery.of(context).size.height / 15,),
+              Hometop(),
             ],
           ),
           decoration: BoxDecoration(color: Colors.white),
