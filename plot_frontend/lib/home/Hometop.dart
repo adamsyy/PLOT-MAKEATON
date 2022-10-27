@@ -27,7 +27,7 @@ class _HometopState extends State<Hometop> {
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 2, 0, 0),
           child: Text(
-              style: TextStyle(fontSize: 24,fontWeight:FontWeight.w400),
+              style: TextStyle(fontSize: 14,fontWeight:FontWeight.w400),
               "returns"
           ),
         )
