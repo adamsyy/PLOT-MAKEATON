@@ -41,7 +41,7 @@ class _HotOptionsCArdState extends State<HotOptionsCArd> {
           Text(widget.location),
           SizedBox(height: 50,),Padding(
           padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
-          child:Icon(FontAwesomeIcons.home,size: 50,))
+          child:Image.asset("animation/4.png"))
         ],
       ),
       decoration: BoxDecoration(

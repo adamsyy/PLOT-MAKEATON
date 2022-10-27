@@ -16,10 +16,12 @@ class _detailCarousalCardState extends State<detailCarousalCard> {
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(horizontal: 5.0),
       decoration: BoxDecoration(
+        image: DecorationImage(fit: BoxFit.fill,
+          image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWv0b86qQLXopAaCIBnitlpy60wOVugn-1kg&usqp=CAU")
+        ),
         color: Color(0xffF7E6D9),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Text('', style: TextStyle(fontSize: 16.0),)
     );
   }
 }

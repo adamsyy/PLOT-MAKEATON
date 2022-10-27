@@ -75,6 +75,11 @@ flutter:
      - animation/pic6.png
      - animation/img.png
      - animation/Group9.png
+     - animation/1.png
+     - animation/2.png
+     - animation/3.png
+     - animation/4.png
+     - animation/5.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

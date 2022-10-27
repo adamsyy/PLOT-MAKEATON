@@ -7,7 +7,9 @@ import 'package:page_transition/page_transition.dart';
 class descCard extends StatefulWidget {
   String title;
   String location;
-  descCard({required this.title,required this.location});
+  var dataa;
+
+  descCard({required this.title,required this.location,required this.dataa});
 
 
   @override
@@ -15,11 +17,12 @@ class descCard extends StatefulWidget {
 }
 
 class _descCardState extends State<descCard> {
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Details()));
+        Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Details(name: widget.dataa["name"],location: widget.dataa["location"],description: widget.dataa["description"],area: widget.dataa["area"],price: widget.dataa["price"],)));
       },
       child: Container(
         padding: EdgeInsets.all(20),
