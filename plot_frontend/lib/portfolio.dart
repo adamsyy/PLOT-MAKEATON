@@ -78,11 +78,38 @@ class _PortfolioState extends State<Portfolio> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("₹${data["portfolio"]} in Holdings", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
-            Text("₹${data["money"]} in plot wallet"),
+            Text("₹${data["user1"]["portfolio"]} in Holdings", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
+            Text("₹${data["user1"]["money"]} in plot wallet"),
           ],
         ),
       ),
+SizedBox(height: 30,),
+
+ListView.builder(    scrollDirection: Axis.vertical,
+    shrinkWrap: true,
+    itemCount:data["share_c"].length,itemBuilder: (BuildContext context,index){
+            return
+            Padding(
+              padding: const EdgeInsets.fromLTRB(18, 0, 18, 20),
+              child: Container(
+                padding: EdgeInsets.all(20),
+                width: 335,
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Color.fromRGBO(247, 230, 217, 1),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("${data["share_c"][index]} ${data["share_n"][index]} stocks", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
+                    Text("${data["share_l"][index]}"),
+                  ],
+                ),
+              ),
+            );}
+
+)
           ],
         ),
       ),
@@ -102,7 +129,7 @@ class _PortfolioState extends State<Portfolio> {
     // print(response.body);
     if (response.statusCode == 201) {
       setState(() {
-        data = json.decode(response.body)["user1"];
+        data = json.decode(response.body);
         print("///");
         print(data);
       });
