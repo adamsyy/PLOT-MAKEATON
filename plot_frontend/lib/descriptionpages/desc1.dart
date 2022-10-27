@@ -11,6 +11,7 @@ int k=0;
 class Desc1 extends StatefulWidget {
   String purpose;
   int purpose1;
+
   Desc1({required this.purpose,required this.purpose1});
 
   @override
@@ -94,9 +95,9 @@ class _Desc1State extends State<Desc1> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      descCard(dataa: data[k], title: data[k]["name"],location: data[k]["location"],),
+                      descCard(dataa: data[k], title: data[k]["name"],location: data[k]["location"],checkval: widget.purpose1),
 
-                      descCard(dataa: data[++k], title: data[k]["name"],location: data[k++]["location"],),
+                      descCard(dataa: data[++k], title: data[k]["name"],location: data[k++]["location"],checkval: widget.purpose1),
                     ],
                   ),
                 );
