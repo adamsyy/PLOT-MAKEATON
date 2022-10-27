@@ -3,7 +3,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class descCard extends StatefulWidget {
-  const descCard({super.key});
+  String title;
+  String location;
+  descCard({required this.title,required this.location});
+
 
   @override
   State<descCard> createState() => _descCardState();
@@ -23,8 +26,8 @@ class _descCardState extends State<descCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Plot 1", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
-          Text("location"),
+          Text(widget.title, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
+          Text(widget.location),
         ],
       ),
     );
