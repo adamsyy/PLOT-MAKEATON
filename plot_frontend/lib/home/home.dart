@@ -2,9 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:plot_frontend/home/Hometop.dart';
 import 'package:plot_frontend/home/hotOptions.dart';
 import 'package:http/http.dart' as http;
+import 'package:plot_frontend/portfolio.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
   @override
   void initState() {
     // TODO: implement initState
@@ -78,10 +81,28 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.monetization_on_sharp),
+            label: 'Portfolio',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
     );
   }
 
+  void _onItemTapped(int index) {
+    Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Portfolio()));
 
+  }
   dynamic fetchToknens() async {
     final url =
     Uri.parse("https://plot-backend.herokuapp.com/land/hotoptions");

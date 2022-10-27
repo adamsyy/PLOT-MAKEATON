@@ -16,6 +16,7 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio> {
 
   @override
+  int _selectedIndex = 1;
   void initState() {
     // TODO: implement initState
 
@@ -113,7 +114,26 @@ ListView.builder(    scrollDirection: Axis.vertical,
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.monetization_on_sharp),
+            label: 'Portfolio',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
     ):Center(child: CupertinoActivityIndicator());
+  }
+  void _onItemTapped(int index) {
+    Navigator.pop(context);
+
   }
 
 
