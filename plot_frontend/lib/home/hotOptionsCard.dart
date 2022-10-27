@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 
 class HotOptionsCArd extends StatefulWidget {
@@ -38,6 +39,9 @@ class _HotOptionsCArdState extends State<HotOptionsCArd> {
             height: 10,
           ),
           Text(widget.location),
+          SizedBox(height: 50,),Padding(
+          padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
+          child:Icon(FontAwesomeIcons.home,size: 50,))
         ],
       ),
       decoration: BoxDecoration(
