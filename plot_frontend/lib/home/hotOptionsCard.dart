@@ -13,6 +13,15 @@ class _HotOptionsCArdState extends State<HotOptionsCArd> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Playground"),
+          SizedBox(height: 10,),
+          Text("Edapally"),
+        ],
+      ),
+
       decoration: BoxDecoration(
         color: Color(0xffD3F5F3),
         borderRadius: BorderRadius.circular(20)

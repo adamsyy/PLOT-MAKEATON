@@ -45,7 +45,8 @@ class _Desc1State extends State<Desc1> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
                 child: Text("Invest",style: TextStyle(fontSize: 24,fontWeight: FontWeight.w400)),
-              )
+              ),
+
 
             ],
           ),
