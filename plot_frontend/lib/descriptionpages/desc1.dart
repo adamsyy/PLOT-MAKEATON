@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:plot_frontend/home/Hometop.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
-
+class Desc1 extends StatefulWidget {
   @override
-  State<Home> createState() => _HomeState();
+  State<Desc1> createState() => _Desc1State();
 }
 
-class _HomeState extends State<Home> {
+class _Desc1State extends State<Desc1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          child: Column(
+        child:Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20,
-              ),
               Row(
                 children: [
                   SizedBox(
@@ -46,13 +40,16 @@ class _HomeState extends State<Home> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 15,
+                height: MediaQuery.of(context).size.height / 20,
               ),
-              HomeTop(),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                child: Text("Invest",style: TextStyle(fontSize: 24,fontWeight: FontWeight.w400)),
+              )
+
             ],
           ),
-          decoration: BoxDecoration(color: Colors.white),
-        ),
+
       ),
     );
   }

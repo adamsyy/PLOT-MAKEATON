@@ -135,23 +135,24 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  NeumorphicButton(
-                      onPressed: () async {
+                  Container(width: 200,
+                    child: NeumorphicButton(
+                        onPressed: () async {
+                          setState(() {
+                            arrow = false;
+                          });
+                              username_login();
 
-                            username_login();
-
-                      },
-                      style: NeumorphicStyle(
-                        color: darkMode ? Colors.grey[850] : Colors.grey[300],
-                        shape: NeumorphicShape.flat,
-                        boxShape: NeumorphicBoxShape.circle(),
-                      ),
-                      child: arrow
-                          ? Icon(
-                              FontAwesomeIcons.arrowRight,
-                              color: Colors.black.withOpacity(0.6),
-                            )
-                          : CupertinoActivityIndicator()),
+                        },
+                        style: NeumorphicStyle(
+                          color: darkMode ? Colors.grey[850] : Colors.grey[300],
+                          shape: NeumorphicShape.flat,
+                          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(20)),
+                        ),
+                        child: arrow
+                            ? Center(child: Text("login"))
+                            : CupertinoActivityIndicator()),
+                  ),
                 ],
               )
             ],
@@ -273,12 +274,13 @@ class _LoginState extends State<Login> {
     if(response2.statusCode==200){
       Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Home()));
     }else{
+      setState(() {
+        arrow = true;
+      });
         showAlertDialog(context);
 
         fieldText_password.clear();
-        setState(() {
-          arrow = true;
-        });
+
     }
   }
 
