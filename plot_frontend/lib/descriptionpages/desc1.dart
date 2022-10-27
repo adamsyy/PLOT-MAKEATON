@@ -35,6 +35,7 @@ class _Desc1State extends State<Desc1> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 20,),
             Row(
               children: [
                 SizedBox(
