@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 15,
               ),
-              Hometop(),
+              HomeTop(),
             ],
           ),
           decoration: BoxDecoration(color: Colors.white),

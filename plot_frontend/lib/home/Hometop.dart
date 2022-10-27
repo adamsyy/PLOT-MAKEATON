@@ -1,13 +1,40 @@
 import 'package:flutter/material.dart';
 
-class Hometop extends StatefulWidget {
-  const Hometop({Key? key}) : super(key: key);
+class HomeTop extends StatefulWidget {
+  const HomeTop({Key? key}) : super(key: key);
 
   @override
-  State<Hometop> createState() => _HometopState();
+  State<HomeTop> createState() => _HomeTopState();
 }
 
-class _HometopState extends State<Hometop> {
+class _HomeTopState extends State<HomeTop> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column
+        (
+        children: [
+          HometopCard(),
+          SizedBox(height: 21,),
+          HometopCard(),
+          SizedBox(height: 21,),
+          HometopCard(),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class HometopCard extends StatefulWidget {
+  const HometopCard({Key? key}) : super(key: key);
+
+  @override
+  State<HometopCard> createState() => _HometopCardState();
+}
+
+class _HometopCardState extends State<HometopCard> {
   @override
   Widget build(BuildContext context) {
     return Container(child: Column(
