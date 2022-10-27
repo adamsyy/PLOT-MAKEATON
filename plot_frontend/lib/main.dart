@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:plot_frontend/auth/login.dart';
+import 'package:plot_frontend/portfolio.dart';
 
 void main() {
   runApp(GetMaterialApp(home:  MyApp()));
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: Login()
+      home: Portfolio()
     );
   }
 }
