@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
               Row(
                 children: [
                   SizedBox(width: 20,),
-                  Container(child: Text(""),
+                  Container(child:Icon(FontAwesomeIcons.peopleGroup),
           height: 50,width: 50,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -28,7 +29,10 @@ class _HomeState extends State<Home> {
           color: Colors.black,
           ),
             borderRadius: BorderRadius.all(Radius.circular(50))
-        ),)],
+        ),),
+                SizedBox(width: 15,),
+                Text("Adamsy",style: TextStyle(fontSize: 20),)
+                ],
               )
             ],
           ),
