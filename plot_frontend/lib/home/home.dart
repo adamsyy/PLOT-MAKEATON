@@ -10,6 +10,31 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.pink,);
+    return Scaffold(
+
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            children: [
+              SizedBox(height: 20,),
+              Row(
+                children: [
+                  SizedBox(width: 20,),
+                  Container(child: Text(""),
+          height: 50,width: 50,
+          decoration: BoxDecoration(
+            color: Colors.white,
+          border: Border.all(
+          color: Colors.black,
+          ),
+            borderRadius: BorderRadius.all(Radius.circular(50))
+        ),)],
+              )
+            ],
+          ),
+          decoration: BoxDecoration(color: Colors.white),
+        ),
+      ),
+    );
   }
 }
