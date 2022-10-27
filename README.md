@@ -18,7 +18,7 @@ Explaining the working of project
 Embed video of project demo
 
 ## Technologies used
-List out tech stacks you have used
+flutter, nodejs, express,mongodb, nextjs, solidity
 
 ## How to configure
 Instructions for setting up project
