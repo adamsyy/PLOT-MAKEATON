@@ -44,9 +44,9 @@ class _LoginState extends State<Login> {
             children: [
               SizedBox(height: MediaQuery.of(context).size.height / 15),
               Image.asset(
-                "animation/pic6.png",
-                height: 275,
-                width: 275,
+                "animation/login.png",
+                height: 235,
+                width: 235,
               ),
               SizedBox(height: MediaQuery.of(context).size.height / 25),
               Neumorphic(

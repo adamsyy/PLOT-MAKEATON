@@ -34,14 +34,14 @@ class _HotOptionsCArdState extends State<HotOptionsCArd> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(widget.title),
+          Text(widget.title,style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18),),
           SizedBox(
             height: 10,
           ),
           Text(widget.location),
-          SizedBox(height: 50,),Padding(
-          padding: EdgeInsets.fromLTRB(150, 0, 0, 0),
-          child:Image.asset("animation/4.png"))
+          SizedBox(height: 40,),Padding(
+          padding: EdgeInsets.fromLTRB(100, 0, 0, 0),
+          child:Image.asset("animation/thaze.png",width: 115,))
         ],
       ),
       decoration: BoxDecoration(
