@@ -1,6 +1,8 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:plot_frontend/detailsPage/details.dart';
+import 'package:page_transition/page_transition.dart';
 
 class descCard extends StatefulWidget {
   String title;
@@ -15,20 +17,25 @@ class descCard extends StatefulWidget {
 class _descCardState extends State<descCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      width: 160,
-      height: 210,
-      decoration: BoxDecoration(
-        color: Color(0xffD3F5F3),
-        borderRadius: BorderRadius.circular(20)
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(widget.title, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
-          Text(widget.location),
-        ],
+    return GestureDetector(
+      onTap: () async {
+        Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: Details()));
+      },
+      child: Container(
+        padding: EdgeInsets.all(20),
+        width: 160,
+        height: 210,
+        decoration: BoxDecoration(
+          color: Color(0xffD3F5F3),
+          borderRadius: BorderRadius.circular(20)
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(widget.title, style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),),
+            Text(widget.location),
+          ],
+        ),
       ),
     );
   }
