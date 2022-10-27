@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:plot_frontend/home/Hometop.dart';
 import 'package:plot_frontend/home/hotOptions.dart';
+import 'package:http/http.dart' as http;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,6 +14,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    dataFuture = fetchToknens();
+
+    super.initState();
+  }
+
+  late var data;
+  late var dataFuture;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +66,11 @@ class _HomeState extends State<Home> {
                 ),
                 HomeTop(),
                 SizedBox(height: 20,),
-                HotOptions(),
+                GestureDetector(
+                  onTap: ()async{
+                    fetchToknens();
+                  },
+                    child: HotOptions()),
                 SizedBox(height: 30,),
               ],
             ),
@@ -61,5 +79,33 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+
+  dynamic fetchToknens() async {
+    final url =
+    Uri.parse("https://plot-backend.herokuapp.com/land/hotoptions");
+
+    final response = await http.get(url, headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+
+    });
+    // print(response.body);
+    if (response.statusCode == 200) {
+      setState(() {
+       data=json.decode(response.body)["result"];
+       print(data);
+      });
+      // print(data);
+      // widget.sum = 0;
+      // for (int i = 0; i < data.length; i++) {
+      //   //find sum
+      //
+      //   widget.sum += data[i]["tokenAmount"] as int;
+      //   widget.percentage_top += data[i]["movie"]["percentage"];
+      // }
+      // return data;
+    }
   }
 }
