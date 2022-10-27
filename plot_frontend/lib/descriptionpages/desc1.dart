@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:plot_frontend/descriptionpages/descCard.dart';
 
 class Desc1 extends StatefulWidget {
   @override
@@ -40,14 +41,23 @@ class _Desc1State extends State<Desc1> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
+                height: 30,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
+                padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
                 child: Text("Invest",style: TextStyle(fontSize: 24,fontWeight: FontWeight.w400)),
               ),
-
-
+              SizedBox(height: 200,),
+              Container(
+                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    descCard(),
+                    descCard(),
+                  ],
+                )
+                ),
             ],
           ),
 
