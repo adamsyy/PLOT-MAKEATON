@@ -8,7 +8,7 @@ import 'package:plot_frontend/detailsPage/detailsCarousal.dart';
 import 'package:http/http.dart' as http;
 
 int share=0;
-int value=0;
+int value=1;
 
 class Details extends StatefulWidget {
   String name;
@@ -78,11 +78,19 @@ class _DetailsState extends State<Details> {
                     SizedBox(
                       width: 15,
                     ),
-                    Text(
+                    widget.checkval==1? Text(
                       "Invest",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
-                    )
+                    ):widget.checkval==2?Text(
+                      "lease",
+                      style:
+                      TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                    ):Text(
+                      "parking",
+                      style:
+                      TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                    ),
                   ],
                 ),
                 SizedBox(height: 50),
@@ -172,7 +180,7 @@ class _DetailsState extends State<Details> {
                                 boxShape: NeumorphicBoxShape.roundRect(
                                     BorderRadius.circular(20)),
                               ),
-                              child: Center(child: Text("Buy"))):NeumorphicButton(
+                              child: Center(child: Text("Request stocks"))):NeumorphicButton(
                               onPressed: () async {
                                 // setState(() {
                                 //   arrow = false;
@@ -291,7 +299,7 @@ class _AlertahneState extends State<Alertahne> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       title: Center(
           child: Text(
-            "Confirm Purchase",
+            "Confirm Request",
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           )),
       content: Container(
@@ -396,7 +404,7 @@ class _AlertahneState extends State<Alertahne> {
                       },
                       child:
                       Text(
-                        "Buy Now",
+                        "request Now",
                         style: TextStyle(color: Colors.white),
                       ))),
             ))

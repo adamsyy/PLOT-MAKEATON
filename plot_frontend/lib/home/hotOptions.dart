@@ -5,8 +5,11 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:plot_frontend/home/hotOptionsCard.dart';
 import 'package:http/http.dart' as http;
+
+import '../descriptionpages/descCard.dart';
 
 var check=0;
 class HotOptions extends StatefulWidget {
