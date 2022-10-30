@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/92361680/197824476-464d420d-26a6-4df5-aef3-99214fac1388.png)
 
 
-# {Project Name} - Make a Ton 5.0
+# {Plot} - Make a Ton 5.0
 Tell us about your project here
 
 ## Team Members
